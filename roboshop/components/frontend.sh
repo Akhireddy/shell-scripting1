@@ -2,10 +2,10 @@
 
 source components/common.sh
 
-Print "install nginx "
+Print "install nginx"
 sudo yum install nginx -y
 STAT_CHK $?
 
-Print "Enable & start nginx services"
+Print "start nginx services"
 systemctl enable nginx && systemctl start nginx
 STAT_CHK $?
