@@ -9,7 +9,7 @@ STAT_CHK $?
 Print "user add"
 id  $APP_USER
 if [ $APP_SER -ne 0 ]; then
-  useradd $APP_USER
+  echo "useradd $APP_USER"
   else
     echo "user already existed"
 fi
