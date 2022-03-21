@@ -6,12 +6,11 @@ Print "Install nodejs"
 yum install nodejs make gcc-c++ -y
 STAT_CHK $?
 
-Print "user add"
 id  $APP_USER
-if [ $APP_SER -ne 0 ]; then
-  echo "useradd $APP_USER"
-  else
-    echo "user already existed"
+if [ $? -ne 0 ]; then
+  Print "user add"
+  useradd $APP_USER
+  STAT_CHK $?
 fi
 
 Print "dowload repo"
